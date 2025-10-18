@@ -85,6 +85,8 @@ int main() {
                     break;
                 case 3:
                     inputData(siswa);
+                    cout << "Nama TK sebelumnya: ";
+                    getline(cin, siswa.tk);
                     cout << "Nama SD sebelumnya: ";
                     getline(cin, siswa.sd);
                     cout << "Nomor Ijazah SD: ";
@@ -93,6 +95,13 @@ int main() {
                     break;
                 case 4:
                     inputData(siswa);
+                    cout << "Nama TK sebelumnya: ";
+                    getline(cin, siswa.tk);
+                    cout << "Nama SD sebelumnya: ";
+                    getline(cin, siswa.sd);
+                    cout << "Nomor Ijazah SD: ";
+                    cin >> siswa.noSd;
+                    cin.ignore();
                     cout << "Nama SMP sebelumnya: ";
                     getline(cin, siswa.smp);
                     cout << "Nomor Ijazah SMP: ";
@@ -144,10 +153,10 @@ int main() {
                     if (s.tk == "" && s.sd == "" && s.smp == "") tampilkan = true;
                     break;
                 case 2:
-                    if (!s.tk.empty()) tampilkan = true;
+                    if (!s.tk.empty() && s.sd.empty() && s.smp.empty()) tampilkan = true;
                     break;
                 case 3:
-                    if (!s.sd.empty()) tampilkan = true;
+                    if (!s.sd.empty() && s.smp.empty()) tampilkan = true;
                     break;
                 case 4:
                     if (!s.smp.empty()) tampilkan = true;
